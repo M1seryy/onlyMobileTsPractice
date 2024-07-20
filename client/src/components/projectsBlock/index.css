@@ -1,0 +1,40 @@
+.projectWrapper {
+  width: 384px;
+  height: 85px;
+  background: rgb(69, 90, 100);
+  padding: 10px;
+}
+.projectTtile {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 25.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.projectSupText {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.prog {
+  position: relative;
+  left: 300px;
+  bottom: 40px;
+}
+.progPersantage {
+  position: absolute;
+  left: 12px;
+  top: 11px;
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.5px;
+  letter-spacing: 0%;
+}

@@ -1,0 +1,56 @@
+.taskBlockWrapper {
+  min-width: 183px;
+  height: 175px;
+  background: rgb(254, 211, 106);
+  display: flex;
+  flex-wrap: wrap;
+  padding: 7px 10px;
+}
+.taskTtitle {
+  color: rgb(0, 0, 0);
+  font-family: Inter;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 25.5px;
+  letter-spacing: 0%;
+  text-align: left;
+  width: 117px;
+}
+
+.progressBar {
+  width: 163px;
+  height: 6px;
+  border-radius: 8px;
+  background: rgb(33, 40, 50);
+}
+.progressBarZero {
+  border-radius: 8px;
+  width: 163px;
+  height: 6px;
+  background: rgb(255, 255, 255);
+}
+.progresWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.progressTitle {
+  color: rgb(33, 40, 50);
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 16.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.persantage {
+  color: rgb(0, 0, 0);
+  font-family: Inter;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 16.5px;
+  letter-spacing: 0%;
+  text-align: right;
+}

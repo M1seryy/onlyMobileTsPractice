@@ -1,0 +1,27 @@
+.container {
+  padding: 23px 28px 0 28px;
+}
+
+.welcomeText {
+  position: absolute;
+  bottom: 165px;
+}
+.mainImgBlock {
+  background-color: white;
+  width: 360px;
+  height: 330px;
+  margin-top: 40px;
+}
+.startBtn {
+  background-color: rgb(254, 211, 106);
+  font-weight: 600;
+  font-size: 18px;
+  font-weight: 38px;
+  width: 370px;
+  border: 0px;
+  height: 67px;
+  position: absolute;
+  left: 28px;
+  bottom: 50px;
+  font-family: "Inter", sans-serif;
+}

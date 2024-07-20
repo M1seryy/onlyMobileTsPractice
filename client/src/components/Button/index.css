@@ -1,0 +1,14 @@
+.startBtn {
+    background-color: rgb(254, 211, 106);
+    font-weight: 600;
+    font-size: 18px;
+    font-weight: 38px;
+    width: 370px;
+    border: 0px;
+    height: 67px;
+    /* position: absolute;
+    left: 28px;
+    bottom: 50px; */
+    font-family: "Inter", sans-serif;
+  }
+  

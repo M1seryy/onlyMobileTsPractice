@@ -1,0 +1,81 @@
+.signWrapper {
+  padding: 38px 26px 0px 26px;
+}
+.logoImg {
+  margin-left: auto;
+  margin-right: auto;
+  width: 113px;
+  height: 91px;
+}
+.mainText {
+  font-family: "Inter", sans-serif;
+  color: white;
+  font-size: 26px;
+  margin-top: 50px;
+}
+.signUpForm {
+}
+.emailGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 27px;
+}
+.emailGroupText {
+  color: rgb(140, 170, 185);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.loginInput {
+  border: none;
+  background-color: rgb(69, 90, 100);
+  width: 376px;
+  height: 58px;
+}
+
+.nameGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 27px;
+}
+.nameGroupText {
+  color: rgb(140, 170, 185);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.loginInput {
+  border: none;
+  background-color: rgb(69, 90, 100);
+  width: 376px;
+  height: 58px;
+  padding-left: 70px;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: white;
+}
+
+.userSvg {
+  position: absolute;
+  top: 17px;
+  left: 17px;
+}
+.inputWrapper {
+  position: relative;
+}
+
+.passGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 27px;
+}
+.passGroupText {
+  color: rgb(140, 170, 185);
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
