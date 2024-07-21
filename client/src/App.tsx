@@ -6,8 +6,10 @@ import SignUp from "./pages/auth/signUp/SignUp";
 import Main from "./pages/mainMenu/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TaskDetails from "./pages/TaskDetails/TaskDetails";
+import { useAppSelector } from "./redux/hooks";
 
 function App() {
+ 
   const router = createBrowserRouter([
     {
       path: "/",

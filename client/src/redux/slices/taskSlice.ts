@@ -1,34 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface taskData {
+  id: number;
+  title: string;
+  complete: boolean;
+  persantage: number;
+}
 
-const initialState = [
+const initialState: taskData[] = [
   {
-    id: 1,
-    task: "Купити продукти",
-    dueDate: "2024-07-18",
-    priority: "high",
-    completed: false,
+    id: Math.random(),
+    title: "Real Estate Website Design",
+    complete: true,
+    persantage: 75,
   },
   {
-    id: 2,
-    task: "Підготувати презентацію",
-    dueDate: "2024-07-20",
-    priority: "medium",
-    completed: false,
+    id: Math.random(),
+    title: "Finance Mobile App Design",
+    complete: false,
+    persantage: 50,
   },
   {
-    id: 3,
-    task: "Зустріч з друзями",
-    dueDate: "2024-07-21",
-    priority: "low",
-    completed: false,
-  },
-  {
-    id: 4,
-    task: "Оплатити рахунки",
-    dueDate: "2024-07-17",
-    priority: "high",
-    completed: true,
+    id: Math.random(),
+    title: "Real Estate Website Design",
+    complete: false,
+    persantage: 0,
   },
 ];
 

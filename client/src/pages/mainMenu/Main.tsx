@@ -6,6 +6,7 @@ import searchSvg from "../../assets/searchSvg.png";
 import TaskBlock from "../../components/taskBlock/TaskBlock";
 import ProjectItem from "../../components/projectsBlock/ProjectItem";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../../redux/hooks";
 
 type Props = {};
 
@@ -17,6 +18,7 @@ interface taskData {
 }
 
 const Main = (props: Props) => {
+  const tasks = useAppSelector((state) => state.tasks);
   const navigate = useNavigate();
   const [search, setSearch] = useState<string>("");
 
@@ -27,27 +29,6 @@ const Main = (props: Props) => {
   const onSearchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
-
-  const completeTasks: taskData[] = [
-    {
-      id: Math.random(),
-      title: "Real Estate Website Design",
-      complete: true,
-      persantage: 75,
-    },
-    {
-      id: Math.random(),
-      title: "Finance Mobile App Design",
-      complete: false,
-      persantage: 50,
-    },
-    {
-      id: Math.random(),
-      title: "Real Estate Website Design",
-      complete: false,
-      persantage: 0,
-    },
-  ];
 
   return (
     <div className="MainWrapper">
@@ -76,7 +57,7 @@ const Main = (props: Props) => {
       </div>
 
       <div className="conmpleteTasks">
-        {completeTasks.map((item: taskData) => {
+        {tasks.map((item: taskData) => {
           return <TaskBlock key={item.id} data={item} />;
         })}
       </div>
@@ -84,7 +65,7 @@ const Main = (props: Props) => {
       <span className="projectTitle">Ongoing Projects</span>
       <div className="projects">
         {search === ""
-          ? completeTasks.map((item: taskData) => {
+          ? tasks.map((item: taskData) => {
               return (
                 <div
                   key={item.id}
@@ -94,7 +75,7 @@ const Main = (props: Props) => {
                 </div>
               );
             })
-          : completeTasks
+          : tasks
               .filter((item) => item.title.toLocaleLowerCase().includes(search))
               .map((item: taskData) => {
                 return (
