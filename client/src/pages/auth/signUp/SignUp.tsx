@@ -84,7 +84,7 @@ const SignUp = (props: Props) => {
             <input
               className="loginInput"
               name="password"
-              id="email"
+              id="pass"
               type="password"
               value={formData.password}
               onChange={inputHandler}

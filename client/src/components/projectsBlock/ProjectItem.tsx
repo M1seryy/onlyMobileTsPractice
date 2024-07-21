@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import "./index.css";
 import Progress from "../CircleProgressBar/Progress";
+import { useParams } from "react-router-dom";
 
 interface taskData {
   id: number;
@@ -14,12 +15,12 @@ interface data {
 }
 
 const ProjectItem: FC<data> = ({ data }) => {
+
   return (
     <div className="projectWrapper">
       <h2 className="projectTtile">{data.title}</h2>
       <span className="projectSupText">Due on : 21 March</span>
       <div className="prog">
-        {" "}
         <Progress data={data} />
       </div>
     </div>

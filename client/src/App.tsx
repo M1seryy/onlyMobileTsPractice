@@ -4,13 +4,35 @@ import "./App.css";
 import Welcome from "./pages/welcome/Welcome";
 import SignUp from "./pages/auth/signUp/SignUp";
 import Main from "./pages/mainMenu/Main";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import TaskDetails from "./pages/TaskDetails/TaskDetails";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Welcome />,
+    },
+
+    {
+      path: "/signUp",
+      element: <SignUp />,
+    },
+    {
+      path: "/main",
+      element: <Main />,
+    },
+    {
+      path: "/details/:id",
+      element: <TaskDetails />,
+    },
+  ]);
+
   return (
-    <div className="App">
-      <Welcome />
-      {/* <SignUp /> */}
-      {/* <Main /> */}
+    <div className="">
+      <RouterProvider router={router} />
+      {/* <Main/> */}
+      {/* <TaskDetails/> */}
     </div>
   );
 }

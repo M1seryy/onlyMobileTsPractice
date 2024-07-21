@@ -1,0 +1,80 @@
+.detailsWrapper {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+.detailsTitle {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 27.5px;
+  letter-spacing: 0%;
+  text-align: center;
+  margin-top: 40px;
+}
+.taskName {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 25.5px;
+  letter-spacing: 0%;
+  text-align: left;
+  margin-top: 60px;
+}
+.projectDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.projectSubText {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.projectSupText {
+  color: rgb(188, 207, 216);
+  font-family: Inter;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 18.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+
+.progressTitle {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.progressBlock {
+  max-width: 380px;
+  align-items: center;
+  margin-top: 20px;
+}
+.prog {
+}
+
+.taskBlockTitle {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}
+.todoBlock {
+    margin-top: 22px;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}

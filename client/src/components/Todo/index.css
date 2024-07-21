@@ -1,0 +1,27 @@
+.todoWrapper {
+  background: rgb(69, 90, 100);
+  width: 370px;
+  height: 58px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 10px;
+}
+.taskCheckBox {
+  width: 40px;
+  height: 40px;
+  background: rgb(254, 211, 106);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.todoTitle {
+  color: rgb(255, 255, 255);
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21.5px;
+  letter-spacing: 0%;
+  text-align: left;
+}

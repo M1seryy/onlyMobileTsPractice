@@ -5,6 +5,7 @@ import settingSvg from "../../assets/settingsSvg.png";
 import searchSvg from "../../assets/searchSvg.png";
 import TaskBlock from "../../components/taskBlock/TaskBlock";
 import ProjectItem from "../../components/projectsBlock/ProjectItem";
+import { useNavigate } from "react-router-dom";
 
 type Props = {};
 
@@ -16,7 +17,12 @@ interface taskData {
 }
 
 const Main = (props: Props) => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState<string>("");
+
+  const onNavigateProjectHandler = (item: taskData) => {
+    navigate(`/details/${item.id}`);
+  };
 
   const onSearchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
@@ -79,12 +85,24 @@ const Main = (props: Props) => {
       <div className="projects">
         {search === ""
           ? completeTasks.map((item: taskData) => {
-              return <ProjectItem key={item.id} data={item} />;
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => onNavigateProjectHandler(item)}
+                >
+                  <ProjectItem data={item} />
+                </div>
+              );
             })
           : completeTasks
               .filter((item) => item.title.toLocaleLowerCase().includes(search))
               .map((item: taskData) => {
-                return <ProjectItem key={item.id} data={item} />;
+                return (
+                  <div onClick={() => onNavigateProjectHandler(item)}>
+                    {" "}
+                    <ProjectItem key={item.id} data={item} />
+                  </div>
+                );
               })}
       </div>
     </div>
