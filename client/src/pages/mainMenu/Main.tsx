@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import "./index.css";
 import avatar from "../../assets/avatart.png";
 import settingSvg from "../../assets/settingsSvg.png";
@@ -6,7 +6,11 @@ import searchSvg from "../../assets/searchSvg.png";
 import TaskBlock from "../../components/taskBlock/TaskBlock";
 import ProjectItem from "../../components/projectsBlock/ProjectItem";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../../redux/hooks";
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import { useDispatch } from "react-redux";
+import { getTasks } from "../../redux/slices/taskSlice";
+import { AsyncThunkAction } from "@reduxjs/toolkit";
+import { AppDispatch } from "../../redux/store";
 
 type Props = {};
 
@@ -18,6 +22,8 @@ interface taskData {
 }
 
 const Main = (props: Props) => {
+  const dispatch = useDispatch<AppDispatch>();
+
   const tasks = useAppSelector((state) => state.tasks);
   const navigate = useNavigate();
   const [search, setSearch] = useState<string>("");
@@ -29,6 +35,7 @@ const Main = (props: Props) => {
   const onSearchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
+
 
   return (
     <div className="MainWrapper">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Welcome from "./pages/welcome/Welcome";
@@ -7,9 +7,17 @@ import Main from "./pages/mainMenu/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TaskDetails from "./pages/TaskDetails/TaskDetails";
 import { useAppSelector } from "./redux/hooks";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "./redux/store";
+import { getTasks } from "./redux/slices/taskSlice";
 
 function App() {
- 
+  const dispatch = useDispatch<AppDispatch>();
+
+  useEffect(() => {
+    console.log("it works");
+    dispatch(getTasks());
+  }, []);
   const router = createBrowserRouter([
     {
       path: "/",

@@ -1,37 +1,51 @@
-import { createSlice } from "@reduxjs/toolkit";
+import {
+  AsyncThunk,
+  createAsyncThunk,
+  createSlice,
+  PayloadAction,
+} from "@reduxjs/toolkit";
+import { AsyncThunkConfig } from "@reduxjs/toolkit/dist/createAsyncThunk";
+import axios from "axios";
 
-interface taskData {
+interface taskItem {
   id: number;
-  title: string;
-  complete: boolean;
-  persantage: number;
+  task: string;
+  dueDate: string;
+  priority: string;
+  completed: boolean;
 }
 
-const initialState: taskData[] = [
-  {
-    id: Math.random(),
-    title: "Real Estate Website Design",
-    complete: true,
-    persantage: 75,
-  },
-  {
-    id: Math.random(),
-    title: "Finance Mobile App Design",
-    complete: false,
-    persantage: 50,
-  },
-  {
-    id: Math.random(),
-    title: "Real Estate Website Design",
-    complete: false,
-    persantage: 0,
-  },
-];
+interface taskData {
+  // complete: boolean;
+  // id: number;
+  // persantage: number;
+  // title: string;
+  todo: taskItem[];
+}
+const instance = axios.create({
+  baseURL: "https://669eba089a1bda3680076f3f.mockapi.io/todo",
+  // timeout: 1000,
+  // headers: {'X-Custom-Header': 'foobar'}
+});
+
+export const getTasks = createAsyncThunk("/api/tasks/get", async () => {
+  const responce = await axios.get(
+    "https://669eba089a1bda3680076f3f.mockapi.io/todo"
+  );
+  return responce.data;
+});
+
+const initialState: taskData[] = [];
 
 const taskSlice = createSlice({
-  name: "counter",
+  name: "taskSlice",
   initialState,
   reducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(getTasks.fulfilled, (state, { payload }) => {
+      state = payload;
+    });
+  },
 });
 
 export const {} = taskSlice.actions;
