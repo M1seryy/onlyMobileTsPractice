@@ -22,9 +22,9 @@ interface taskData {
 }
 
 const Main = (props: Props) => {
-  const dispatch = useDispatch<AppDispatch>();
 
-  const tasks = useAppSelector((state) => state.tasks);
+  const { project } = useAppSelector((state) => state.tasks);
+
   const navigate = useNavigate();
   const [search, setSearch] = useState<string>("");
 
@@ -35,7 +35,6 @@ const Main = (props: Props) => {
   const onSearchHandler = (event: ChangeEvent<HTMLInputElement>) => {
     setSearch(event.target.value);
   };
-
 
   return (
     <div className="MainWrapper">
@@ -64,7 +63,7 @@ const Main = (props: Props) => {
       </div>
 
       <div className="conmpleteTasks">
-        {tasks.map((item: taskData) => {
+        {project.map((item: taskData) => {
           return <TaskBlock key={item.id} data={item} />;
         })}
       </div>
@@ -72,7 +71,7 @@ const Main = (props: Props) => {
       <span className="projectTitle">Ongoing Projects</span>
       <div className="projects">
         {search === ""
-          ? tasks.map((item: taskData) => {
+          ? project.map((item: taskData) => {
               return (
                 <div
                   key={item.id}
@@ -82,7 +81,7 @@ const Main = (props: Props) => {
                 </div>
               );
             })
-          : tasks
+          : project
               .filter((item) => item.title.toLocaleLowerCase().includes(search))
               .map((item: taskData) => {
                 return (

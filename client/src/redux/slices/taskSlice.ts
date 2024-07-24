@@ -14,13 +14,16 @@ interface taskItem {
   priority: string;
   completed: boolean;
 }
+interface ProjectItem {
+  complete: boolean;
+  id: number;
+  persantage: number;
+  title: string;
+  todo: taskItem[];
+}
 
 interface taskData {
-  // complete: boolean;
-  // id: number;
-  // persantage: number;
-  // title: string;
-  todo: taskItem[];
+  project: ProjectItem[];
 }
 const instance = axios.create({
   baseURL: "https://669eba089a1bda3680076f3f.mockapi.io/todo",
@@ -35,7 +38,9 @@ export const getTasks = createAsyncThunk("/api/tasks/get", async () => {
   return responce.data;
 });
 
-const initialState: taskData[] = [];
+const initialState: taskData = {
+  project: [],
+};
 
 const taskSlice = createSlice({
   name: "taskSlice",
@@ -43,7 +48,7 @@ const taskSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(getTasks.fulfilled, (state, { payload }) => {
-      state = payload;
+      state.project = payload;
     });
   },
 });

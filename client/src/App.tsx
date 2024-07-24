@@ -6,16 +6,13 @@ import SignUp from "./pages/auth/signUp/SignUp";
 import Main from "./pages/mainMenu/Main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import TaskDetails from "./pages/TaskDetails/TaskDetails";
-import { useAppSelector } from "./redux/hooks";
 import { useDispatch } from "react-redux";
-import { AppDispatch } from "./redux/store";
 import { getTasks } from "./redux/slices/taskSlice";
 
 function App() {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<any>();
 
   useEffect(() => {
-    console.log("it works");
     dispatch(getTasks());
   }, []);
   const router = createBrowserRouter([
