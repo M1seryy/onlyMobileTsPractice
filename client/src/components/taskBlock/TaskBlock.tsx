@@ -1,5 +1,6 @@
 import React, { FC } from "react";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 interface taskData {
   data: {
@@ -11,8 +12,13 @@ interface taskData {
 }
 
 const TaskBlock: FC<taskData> = ({ data }) => {
+  const navigate = useNavigate();
+  const onNavigateProjectHandler = () => {
+    navigate(`/details/${data.id}`);
+  };
+
   return (
-    <div className="taskBlockWrapper">
+    <div className="taskBlockWrapper" onClick={onNavigateProjectHandler}>
       <h2 className="taskTtitle">{data.title}</h2>
 
       <div className="progresWrapper">
