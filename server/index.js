@@ -21,7 +21,7 @@ const connection = mongoose.connect(
 connection
   .then(() => {
     app.listen(port, function () {
-      console.log(`Server running. Use our API on port:${process.env.PORT}`);
+      console.log(`Server running. fUse our API on port:${process.env.PORT}`);
     });
   })
   .catch((err) =>
