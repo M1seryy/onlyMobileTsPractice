@@ -1,18 +1,20 @@
 const express = require("express");
 const app = express();
 require("dotenv").config();
+app.use(express.json())
 const cors = require("cors");
 
 const port = process.env.PORT;
 const login = process.env.LOGIN;
 const password = process.env.PASSWORD;
 
-
-
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
+const todoRoutes = require("./API/routes/TASKS/index");
+
+app.use("/api/todo", todoRoutes);
 const mongoose = require("mongoose");
 
 const connection = mongoose.connect(
