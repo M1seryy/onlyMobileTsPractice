@@ -31,7 +31,7 @@ const TaskDetails = (props: Props) => {
     (item) => item.id === Number(id)
   );
   const task = currentTask[0];
-  
+
   return (
     <div className="detailsWrapper">
       {allTasks.length !== 0 ? (
